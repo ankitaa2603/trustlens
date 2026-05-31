@@ -1,5 +1,7 @@
 # 🔍 TrustLens AI
 
+
+View Live Project : https://trustlens-brown.vercel.app/
 > Decode hidden risks. Understand documents instantly. Build trust with AI.
 
 TrustLens AI is an intelligent document analysis platform that helps users understand contracts, offer letters, agreements, policies, and legal documents in seconds. Instead of reading pages of complex text, users receive a trust score, risk summary, highlighted clauses, and AI-powered explanations through an interactive assistant called **Lexi**.
