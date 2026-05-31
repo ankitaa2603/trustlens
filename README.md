@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TrustLens AI
+
+**Know What You're Signing.**
+
+TrustLens AI is a premium legal document intelligence platform that helps users understand contracts, internship offers, rental agreements, privacy policies, and other legal documents before signing them.
+
+## Features
+
+- **Trust Score Engine** — 0-100 fairness scoring
+- **Hidden Clause Detection** — AI-powered risk identification
+- **Plain English Translation** — Complex legal language simplified
+- **Trust Timeline** — Visual lifecycle of contract obligations
+- **Negotiation Suggestions** — Actionable improvement points
+- **Lexi AI Assistant** — Context-aware platform guide
+- **Demo Mode** — Explore without an account
+
+## Tech Stack
+
+- Next.js 15+ (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Shadcn UI (Radix)
+- Framer Motion
+- Google Gemini API
+- Supabase (PostgreSQL + Auth)
+- Google OAuth + Email/Password Auth
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Configure environment
+
+Copy `.env.example` to `.env.local` and fill in your credentials:
+
+```bash
+cp .env.example .env.local
+```
+
+### 3. Set up Supabase
+
+1. Create a project at [supabase.com](https://supabase.com)
+2. Run `supabase/schema.sql` in the SQL Editor
+3. Enable Google OAuth in Authentication → Providers
+4. Add your site URL to Redirect URLs: `http://localhost:3000/auth/callback`
+
+### 4. Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Demo Mode
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Visit `/demo` to explore three pre-analyzed sample documents without creating an account:
 
-## Learn More
+- Internship Offer Letter (Trust Score: 62)
+- Rental Agreement (Trust Score: 48)
+- Privacy Policy (Trust Score: 35)
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push to GitHub
+2. Import project in [Vercel](https://vercel.com)
+3. Add environment variables from `.env.example`
+4. Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/                  # Next.js App Router pages
+│   ├── dashboard/        # Authenticated dashboard
+│   ├── demo/             # Demo mode (no auth)
+│   └── api/              # API routes
+├── components/
+│   ├── analysis/         # Trust Score, Timeline, Results
+│   ├── dashboard/        # Dashboard layout & upload
+│   ├── landing/          # Marketing page sections
+│   ├── lexi/             # AI assistant
+│   └── ui/               # Shadcn UI components
+├── data/                 # Demo documents & FAQs
+├── lib/                  # Utilities, Supabase, Gemini
+└── types/                # TypeScript types
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
